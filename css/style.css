@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .95);
+}
+
+:root {
+    --success: #00C566;
+    --error: #FF4747;
+}
+
+.form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .input {
+        height: 50px;
+        border-radius: 15px;
+        background: transparent;
+        border: 3px solid rgba(255 ,255, 255, .5);
+        transition: .5s all ease-in-out;
+        padding-left: 15px;
+        font-size: 1em;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 1.5px;
+        &::placeholder {
+            transition: .5s all ease-in-out;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        &:focus {
+            transition: .5s all ease-in-out;
+            border: 3px solid rgba(255 ,255, 255, .8);
+            color: rgba(255, 255, 255, 0.8);
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+    .input_button {
+        background: rgb(255, 255, 255);
+        /* color: rgb(0, 0, 0); */
+        padding: 10px 0px;
+        letter-spacing: 1.5px;
+        font-size: 1em;
+        font-weight: 700;
+    }
+    .input:user-valid {
+        border: var(--success) 3px solid;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .input:user-invalid {
+        border: #FF4747 3px solid;
+        color: #FF4747;
+    }
+}
